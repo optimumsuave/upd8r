@@ -1,1 +1,132 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,100);html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}html{line-height:1}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}q,blockquote{quotes:none}q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}a img{border:none}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}body{font-family:'Montserrat', sans-serif;background:#222222;overflow:-moz-scrollbars-vertical;overflow-y:scroll;position:relative;z-index:1}a{text-decoration:none}nav{background:rgba(255,255,255,0.1)}nav ul li{height:40px;float:left;background:transparent;cursor:pointer;-moz-transition:background 0.2s ease-out;-o-transition:background 0.2s ease-out;-webkit-transition:background 0.2s ease-out;transition:background 0.2s ease-out}nav ul li:hover{background:#666}nav ul li a{line-height:40px;color:#eee;padding:0 10px}.shell{max-width:940px;margin:0 auto}@media (max-width: 767px){.shell{width:auto;padding:0 10px}}@media (max-width: 540px){.shell{width:auto;padding:0 10px}}.wrap{width:100%;max-width:740px;margin:0 auto}.logo{height:40px;padding:20px;text-align:right}.countdown{height:40px;float:left;padding:20px}
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,100);
+/* line 5, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 22, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1; }
+
+/* line 24, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 26, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 28, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 30, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+  /* line 103, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+/* line 32, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 116, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/* line 11, ../scss/main.scss */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #222222;
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 1; }
+
+/* line 20, ../scss/main.scss */
+a {
+  text-decoration: none; }
+
+/* line 1, ../scss/_nav.scss */
+nav {
+  background: rgba(255, 255, 255, 0.1); }
+  /* line 4, ../scss/_nav.scss */
+  nav ul li {
+    height: 40px;
+    float: left;
+    background: transparent;
+    cursor: pointer;
+    -moz-transition: background 0.2s ease-out;
+    -o-transition: background 0.2s ease-out;
+    -webkit-transition: background 0.2s ease-out;
+    transition: background 0.2s ease-out; }
+    /* line 10, ../scss/_nav.scss */
+    nav ul li:hover {
+      background: #666; }
+    /* line 13, ../scss/_nav.scss */
+    nav ul li a {
+      line-height: 40px;
+      color: #eee;
+      padding: 0 10px; }
+
+/* line 3, ../scss/_body.scss */
+.shell {
+  max-width: 940px;
+  margin: 0 auto; }
+  @media (max-width: 767px) {
+    /* line 3, ../scss/_body.scss */
+    .shell {
+      width: auto;
+      padding: 0 10px; } }
+  @media (max-width: 540px) {
+    /* line 3, ../scss/_body.scss */
+    .shell {
+      width: auto;
+      padding: 0 10px; } }
+
+/* line 18, ../scss/_body.scss */
+.wrap {
+  width: 100%;
+  max-width: 740px;
+  margin: 0 auto; }
+
+/* line 24, ../scss/_body.scss */
+.logo {
+  height: 40px;
+  padding: 20px;
+  text-align: right; }
+
+/* line 30, ../scss/_body.scss */
+.countdown {
+  height: 40px;
+  float: left;
+  padding: 20px;
+  color: white;
+  line-height: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.6em; }
+  /* line 40, ../scss/_body.scss */
+  .countdown span {
+    color: #999; }
