@@ -13,7 +13,9 @@ $( document ).ready(function() {
 	}
 	setBoxHeight();
 	
-
+1 $('#clock').countdown('2015/1/30', function(event) {
+2   $(this).html(event.strftime('%D days %H:%M:%S'));
+3 });
 
 	// var $menu = $(".mobileactionbar");
 
