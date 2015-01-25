@@ -15,16 +15,20 @@
 	}
 }
 
-
-
-
 .wrap {
 	width: 100%;
 	max-width: 740px;
 	margin: 0 auto;
 }
 
+.logo {
+	height: 40px;
+	padding: 20px;
+	text-align: right;
+}
+
 .countdown {
-	height: 120px;
-	background: #555;	
+	height: 40px;
+	float: left;
+	padding: 20px;
 }

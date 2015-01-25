@@ -1,9 +1,19 @@
 nav {
-
+	background: rgba(255,255,255,0.1);
 	ul {
 		li {
+			height: 40px;
+			float: left;
+			background: transparent;
+			cursor: pointer;
+			@include transition(background 0.2s ease-out);
+			&:hover {
+				background: #666;
+			}
 			a {
-
+				line-height: 40px;
+				color: #eee;
+				padding: 0 10px;
 			}
 		}
 	}
