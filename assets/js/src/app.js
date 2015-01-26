@@ -14,7 +14,7 @@ $( document ).ready(function() {
 	setBoxHeight();
 	
 	$('.countdown').countdown('2015/1/30', function(event) {
-		$(this).html(event.strftime('%D <span>days</span> %H <span>hrs</span> %M <span>min</span> %S <span>sec</span>'));
+		$(this).html(event.strftime('%H <span>hrs</span> %M <span>min</span> %S <span>sec</span>'));
 	});
 
 	function setIconBarHeight(){
