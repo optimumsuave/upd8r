@@ -19,7 +19,7 @@ $( document ).ready(function() {
 
 	function setIconBarHeight(){
     	var iconbar = $(".message .icon");
-		iconbar.height(iconbar.parent().height());
+		iconbar.height(iconbar.parent().find(".copy").height()+20);
     }
     setIconBarHeight();
 
