@@ -1,0 +1,316 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* Real Code */
+
+body {
+	background: #e5e5e5;
+	background: #d5d5d5;
+	font-family: 'Roboto', sans-serif;
+}
+
+nav {
+	padding-top: 60px;
+	height: 40px;
+	max-width: 740px;
+	margin:0 auto;
+}
+
+nav ul li {
+	height: 40px;
+	line-height: 40px;
+	font-size: 1.4em;
+	display: inline-block;
+	padding: 0 10px;
+	color: #666;
+}
+nav ul li span{
+	padding-left: 5px;
+}
+
+nav ul li:hover {
+	cursor: pointer;
+	background: #444;
+	color: #eee;
+}
+
+.wrap {
+	max-width: 700px;
+	padding: 20px;
+	background: white;
+	margin:0 auto;
+	margin-bottom: 300px;
+}
+
+h1 {
+	font-weight: 200;
+	font-size: 2em;
+	text-transform: uppercase;
+	text-align: right;
+	letter-spacing: 0.1em;
+}
+
+.clearfix {
+	clear: both;
+}
+.login span {
+	clear: both;
+	float: left;
+}
+.login input {
+	margin: 5px 0;
+	font-size: 1.2em;
+	clear: both;
+	float: left;
+}
+
+
+
+/* Modal */
+.modal {
+	position: absolute;
+	max-width: 740px;
+	width: 100%;
+	height: 50px;
+	left: 50%;
+	margin-left:-370px;
+	text-align: center;
+	top: -50px;
+	font-size: 1.2em;
+	line-height: 50px;
+	transition: top 0.5s ease-out;
+	-webkit-transition: top 0.5s ease-out;
+	background: rgba(255,255,255,0.8);
+}
+.modal.success {
+	color: rgb(0,200,0);
+}
+.modal.error {
+	color: rgb(200,0,0);
+}
+.modal.open {
+	top: 0px;
+}
+
+
+/* Sections */
+
+.sections {
+
+}
+.section {
+	transition: 0.5s ease-out max-height;
+	-webkit-transition: 0.5s ease-out max-height;
+	max-height: auto;
+	line-height: 40px;
+	overflow: hidden;
+	margin-bottom: 20px;
+	/*min-height: 200px;	*/
+}
+.section h2 {
+	color: #666;
+	border-left: 4px solid #666;
+	font-size: 1.6em;
+	padding-left: 10px;
+}
+
+.section.closed {
+	cursor: pointer;
+	max-height: 40px;
+	/*min-height: 100px;*/
+}
+
+.section .controls ul {
+
+}
+.section .controls ul li{
+	display: inline-block;
+	padding:0 10px;
+	border-radius: 10px;
+	font-size: 0.9em;
+}
+
+.section .controls ul li.add:hover{
+	cursor: pointer;
+	background: #666;
+	color: white;
+}
+
+
+
+.project {
+	line-height: 1em;
+	margin: 10px 0;
+	padding: 14px;
+	border-left: 1px solid #666;
+	/*float: left;*/
+}
+
+.project .controls {
+	float: right;
+	font-size: 1em;
+}
+
+.project .controls ul li.moveup,
+.project .controls ul li.movedown,
+.project .controls ul li.remove
+{
+	width: 24px;
+	height: 24px;
+	border-radius: 0;
+	background: #ccc;
+	line-height: 22px;
+	padding: 3px;
+	text-align: center;
+	cursor: pointer;
+}
+.project .controls ul li.moveup:hover,
+.project .controls ul li.movedown:hover,
+.project .controls ul li.remove:hover {
+	background: #666;
+	color: white;	
+}
+
+
+.project h3 {
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+.project p {
+
+}
+.project b {
+font-weight: 700;
+margin-top: 10px;
+display: block;
+}
+
+
+
+.project .photos {
+}
+
+.project h4 {
+	margin-top: 10px;
+	padding: 10px 0;
+	text-transform: uppercase;
+	border-bottom: 1px solid #222;
+	font-size: 1em;
+	color: #666;
+}
+
+.project .photos .controls {
+	line-height: 1.6em;
+	float: left;
+	clear: both;
+	margin: 0;
+	padding: 10px 0;
+}
+
+.project .photos .controls ul li{
+	/*line-height: 1.4em;*/
+	margin: 0;
+}
+.project .photos .controls ul li.box{
+	padding: 0;
+}
+
+.project .photos .controls ul li.upload:hover{
+	cursor: pointer;
+	background: #666;
+	color: white;
+}
+
+
+
+.project .photos .gallery {
+
+}
+
+.photos .gallery .photo {
+	display: block;
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+.photos .gallery .photo .photo-controls{
+	position: absolute;
+	line-height: 120px;
+}
+
+.photos .gallery .photo .photo-controls div{
+	display: block;
+	line-height: 120px;
+	width: 40px;
+	text-align: center;
+	float: left;
+}
+.photos .gallery .photo .photo-controls div i{
+	color: rgba(0,0,0,0.6);
+	text-align: center;
+	display: none;
+}
+.photos .gallery .photo:hover .photo-controls div i{
+	display: inline-block;
+}
+
+.photos .gallery .photo .photo-controls div:hover{
+	cursor: pointer;
+	background: rgba(0,0,0,0.6);
+}
+
+.photos .gallery .photo .photo-controls div:hover i{
+	color: white;
+}
+
+
+
+

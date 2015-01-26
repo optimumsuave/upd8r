@@ -37,7 +37,7 @@ $( document ).ready(function() {
  //            $headernav.addClass("shine");
  //            $('body').addClass("bg");
  //        } else {
- //        	$menu.removeClass("shine");
+ //        	$menu.removeClass("sshine");
  //        	$headernav.removeClass("shine");
  //        }
  //    });
@@ -46,6 +46,45 @@ $( document ).ready(function() {
     	// setBoxHeight();
     	setIconBarHeight();
     });
+
+
+    function renderContent(messages){
+    	$(".messages").empty();
+    	for(var i=0;i<messages.length;i++){
+    		messages[i].appendTo($(".messages"));
+    	}
+    	setIconBarHeight();
+    	
+    }
+    function loadContent(data){
+    	if(data.length) {
+    		var messages = [];
+    		for(var i=0;i<data.length;i++){
+    			var msg = $("<div class='message'></div>");
+    			$("<div class='icon'><div class='icon-inner'><i class='fa "+data[i].icon+"'></i></div></div>").appendTo(msg);
+        		var copy = $("<div class='copy'></div>");
+        		$("<h1>"+data[i].title+"</h1>").appendTo(copy);
+        		$("<h2>"+data[i].subtitle+"</h2>").appendTo(copy);
+        		$("<p>"+data[i].descr+"</p>").appendTo(copy);
+        		copy.appendTo(msg);
+        		messages.push(msg);
+    		}
+    		renderContent(messages);
+    	}
+    }
+
+
+    $.getJSON("api/json/content.json", function(data){
+    	console.log(data);
+    	if(typeof data !== "undefined"){
+    		if(typeof data.data !== "undefined"){
+    			messages = data.data[0].data;
+    			loadContent(messages);
+    		}
+    	}
+    });
+
+
 
 
 });
