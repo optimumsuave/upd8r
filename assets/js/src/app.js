@@ -13,9 +13,15 @@ $( document ).ready(function() {
 	}
 	setBoxHeight();
 	
- $('.countdown').countdown('2015/1/30', function(event) {
-   $(this).html(event.strftime('%D <span>days</span> %H <span>hrs</span> %M <span>min</span> %S <span>sec</span>'));
- });
+	$('.countdown').countdown('2015/1/30', function(event) {
+		$(this).html(event.strftime('%D <span>days</span> %H <span>hrs</span> %M <span>min</span> %S <span>sec</span>'));
+	});
+
+	function setIconBarHeight(){
+    	var iconbar = $(".message .icon");
+		iconbar.height(iconbar.parent().height());
+    }
+    setIconBarHeight();
 
 	// var $menu = $(".mobileactionbar");
 
@@ -36,9 +42,10 @@ $( document ).ready(function() {
  //        }
  //    });
 
- //    $(window).on('resize', function(){
- //    	setBoxHeight();
+    $(window).on('resize', function(){
+    	// setBoxHeight();
+    	setIconBarHeight();
+    });
 
- //    });
 
 });
