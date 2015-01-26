@@ -86,17 +86,20 @@
 
 			.icon-inner {
 				margin: 0 auto;
-				background: #eee;
-				border: 3px solid #888;
+				background: $orange;
+				// border: 3px solid #888;
 				width: 60px;
 				height: 60px;
 				border-radius: 60px;
 				line-height: 60px;
 				text-align: center;
+
+				@include box-shadow(0px 0px 20px 3px rgba(0,0,0,0.34));
+
 				i {
 					font-size: 2em;
 					vertical-align: middle;
-					color: $orange;
+					color: white;
 					// font-size: 4em;
 				}
 			}
