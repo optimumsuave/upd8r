@@ -25,6 +25,9 @@
 	height: 40px;
 	padding: 20px;
 	text-align: right;
+	@include breakpoint(mobile) {
+		text-align: left;
+	}
 }
 
 .countdown {
@@ -43,8 +46,9 @@
 	}
 
 	@include breakpoint(mobile) {
-
-		width: 100%;
+		font-size: 1.2em;
+		padding: 5%;
+		width: 90%;
 	}
 
 }
