@@ -222,6 +222,8 @@ ContentApp.Project.prototype = {
  		});
  		this.$icon.editable(function(value, settings) {
      		_this.icon = value;
+     		_this.$icon = value;
+
      		return value;
   		}, {
      		type    : 'text',
