@@ -79,6 +79,9 @@
 			}
 		}
 
+		&:last-child .icon {
+			height: 60px !important;
+		}
 		.icon {
 			width: 20%;
 			float: left;
