@@ -50,7 +50,7 @@
 	padding-left: 0;
 	padding-right: 4%;
 	width: 70%;
-	background: #444;
+	// background: #444;
 
 	@include breakpoint(mobile) {
 		width: 96%;
@@ -62,14 +62,23 @@
 		clear: both;
 		color: white;
 
+		&:first-child .icon {
+			padding-top: 0;
+			margin-top: 20px;
+			.icon-inner {
+				margin-top: -5px;
+			}
+		}
 
 		.icon {
 			width: 20%;
 			float: left;
 			min-width: 60px;
 			text-align: center;
+			background: url(../images/vertical.png) repeat-y center;
 			padding-top: 20px;
-			// min-height: 400px;
+			min-height: 400px;
+
 			.icon-inner {
 				margin: 0 auto;
 				background: #fff;
