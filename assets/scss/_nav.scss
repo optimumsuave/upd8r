@@ -1,9 +1,11 @@
 nav {
 	background: rgba(255,255,255,0.1);
+	float: right;
 	ul {
 		li {
 			height: 40px;
-			float: left;
+			// float: left;
+			clear: both;
 			background: transparent;
 			cursor: pointer;
 			@include transition(background 0.2s ease-out);

@@ -48,7 +48,11 @@
 .messages {
 	float: left;
 	padding: 10px;
-	width: 80%;
+	padding-left: 0;
+	padding-right: 4%;
+	padding-top: 40px;
+	width: 70%;
+	background: #444;
 
 	@include breakpoint(mobile) {
 		width: 96%;
