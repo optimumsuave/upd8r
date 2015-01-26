@@ -19,7 +19,11 @@ $( document ).ready(function() {
 
 	function setIconBarHeight(){
     	var iconbar = $(".message .icon");
-		iconbar.height(iconbar.parent().find(".copy").height()+20);
+    	if(iconbar.length){
+    		for(var i=0;i<iconbar.length;i++) {
+				$(iconbar[i]).height($(iconbar[i]).parent().find(".copy").height()+20);
+    		}
+    	}
     }
     setIconBarHeight();
 
@@ -54,7 +58,7 @@ $( document ).ready(function() {
     		messages[i].appendTo($(".messages"));
     	}
     	setIconBarHeight();
-    	
+
     }
     function loadContent(data){
     	if(data.length) {
