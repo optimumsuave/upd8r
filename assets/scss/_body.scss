@@ -31,6 +31,7 @@
 	height: 40px;
 	float: left;
 	padding: 20px;
+	padding-left: 10px;
 	color: white;
 	line-height: 40px;
 	text-transform: uppercase;
@@ -43,3 +44,83 @@
 
 }
 
+
+.messages {
+	float: left;
+	padding: 10px;
+	width: 80%;
+
+	@include breakpoint(mobile) {
+		width: 96%;
+		padding: 2%;
+	}	
+
+	.message {
+		float: left;
+		clear: both;
+		color: white;
+
+
+		.icon {
+			width: 20%;
+			float: left;
+			min-width: 60px;
+			text-align: center;
+			// min-height: 400px;
+			.icon-inner {
+				margin: 0 auto;
+				background: #fff;
+				width: 60px;
+				height: 60px;
+				border-radius: 60px;
+				line-height: 60px;
+				text-align: center;
+				i {
+					font-size: 2.2em;
+					vertical-align: middle;
+					color: $orange;
+					// font-size: 4em;
+				}
+			}
+
+			@include breakpoint(mobile) {
+				min-width: 50px;
+				.icon-inner {
+					width: 40px;
+					height: 40px;
+					border-radius: 40px;
+					line-height: 40px;
+
+					i {
+						font-size: 1.6em;
+					}
+				}
+			}
+		}
+
+		.copy {
+			float: left;
+			width: 80%;
+
+			h1, h2, p {
+				margin: 20px 0;
+			}
+
+			h1 {
+				font-size: 1.6em;
+				margin-top: 0px;
+			}
+			h2 {
+				color: #999;
+				font-size: 1.2em;
+			}
+
+			p {
+				font-family: 'Source Sans Pro', sans-serif;
+				font-size: 1em;
+				line-height: 1.4em;
+			}
+
+		}
+	}
+}

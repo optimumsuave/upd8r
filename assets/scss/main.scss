@@ -1,12 +1,14 @@
 @import "compass";
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,100);
-// @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,200italic,300italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,200italic,300italic);
 
 @import "compass/reset";
 
 
 @import "mixins";
+
+$orange : #FF6F00;
 
 body {
 	font-family: 'Montserrat', sans-serif;
