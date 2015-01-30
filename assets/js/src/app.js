@@ -13,8 +13,9 @@ $( document ).ready(function() {
 	}
 	setBoxHeight();
 	
-	$('.countdown').countdown('2015/1/30', function(event) {
-		$(this).html(event.strftime('%H <span>hrs</span> %M <span>min</span> %S <span>sec</span>'));
+	$('.countdown').countdown('2015/1/31 20:00', function(event) {
+        var totalHours = event.offset.totalDays * 24 + event.offset.hours;
+		$(this).html(event.strftime(totalHours+' <span>hrs</span> %M <span>min</span> %S <span>sec</span>'));
 	});
 
 	function setIconBarHeight(){
@@ -61,34 +62,43 @@ $( document ).ready(function() {
 
     }
     function loadContent(data){
+        currentTime = moment().unix();
     	if(data.length) {
     		var messages = [];
     		for(var i=0;i<data.length;i++){
     			var msg = $("<div class='message'></div>");
-    			$("<div class='icon'><div class='icon-inner'><i class='fa "+data[i].icon+"'></i></div></div>").appendTo(msg);
+                var col = "";
+                if(data[i].color != ""){
+                    col = " style='background:"+data[i].color+"'";
+    			}
+                $("<div class='icon'><div class='icon-inner'"+col+"><i class='fa "+data[i].icon+"'></i></div></div>").appendTo(msg);
         		var copy = $("<div class='copy'></div>");
         		$("<h1>"+data[i].title+"</h1>").appendTo(copy);
         		$("<h2>"+data[i].subtitle+"</h2>").appendTo(copy);
         		$("<p>"+data[i].descr+"</p>").appendTo(copy);
         		copy.appendTo(msg);
-        		messages.push(msg);
+                if(data[i].timestamp < currentTime) {
+        		  messages.push(msg);
+                }
     		}
     		renderContent(messages);
     	}
     }
 
+    function refreshContent(){
+        $.getJSON("api/json/content.json", function(data){
+        	console.log(data);
+        	if(typeof data !== "undefined"){
+        		if(typeof data.data !== "undefined"){
+        			messages = data.data[0].data;
+        			loadContent(messages);
+        		}
+        	}
+        });
+    }
 
-    $.getJSON("api/json/content.json", function(data){
-    	console.log(data);
-    	if(typeof data !== "undefined"){
-    		if(typeof data.data !== "undefined"){
-    			messages = data.data[0].data;
-    			loadContent(messages);
-    		}
-    	}
-    });
-
-
+    setInterval(refreshContent, 30000);
+    refreshContent();
 
 
 });

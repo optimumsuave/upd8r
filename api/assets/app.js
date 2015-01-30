@@ -162,6 +162,7 @@ ContentApp.Project = function(options){
 		this.subtitle = options.data.subtitle;
 		this.descr = options.data.descr;
 		this.icon = options.data.icon;
+		this.color = options.data.color;
 		this.timestamp = options.data.timestamp;
 		if(options.data.photos) {
 			this.photos = options.data.photos;
@@ -172,6 +173,7 @@ ContentApp.Project = function(options){
 		this.title = "";
 		this.subtitle = "";
 		this.icon = "";
+		this.photo = "";
 		this.descr = "";
 		this.timestamp = "";
 		this.photos = [];
@@ -191,13 +193,15 @@ ContentApp.Project.prototype = {
 		this.$title = $("<h3>"+this.title+"</h3>").appendTo(this.$el);
 		$("<b>Icon (i.e. fa-icon-shortcode)</b>").appendTo(this.$el);
 		this.$icon = $("<span>"+this.icon+"</span>").appendTo(this.$el);
+		$("<b>Color (#hex)</b>").appendTo(this.$el);
+		this.$color = $("<span>"+this.color+"</span>").appendTo(this.$el);
 		$("<b>Subtitle</b>").appendTo(this.$el);
 		this.$subtitle = $("<p>"+this.subtitle+"</p>").appendTo(this.$el);
 		$("<b>Description</b>").appendTo(this.$el);
 		this.$descr = $("<p>"+this.descr+"</p>").appendTo(this.$el);
 		$("<b>Scheduled Post Time</b>").appendTo(this.$el);
 		this.$timestamp = $("<p>"+this.timestamp+"</p>").appendTo(this.$el);
-		this.$time = $("<p>"+moment(this.timestamp).toString()+"</p>").appendTo(this.$el);
+		this.$time = $("<p>"+moment.unix(this.timestamp).toString()+"</p>").appendTo(this.$el);
 
 		this.$photos = new ContentApp.Photos({$project: this.$el, photos: this.photos});
 
@@ -230,6 +234,17 @@ ContentApp.Project.prototype = {
      		submit  : 'Save',
      		cancel  : 'Cancel',
      		placeholder : 'Click to edit font-awesome shortcode title...'
+ 		});
+ 		this.$color.editable(function(value, settings) {
+     		_this.color = value;
+     		_this.$color = value;
+
+     		return value;
+  		}, {
+     		type    : 'text',
+     		submit  : 'Save',
+     		cancel  : 'Cancel',
+     		placeholder : 'Click to edit color hex code...'
  		});
  		this.$subtitle.editable(function(value, settings) {
      		_this.subtitle = value;
@@ -265,7 +280,7 @@ ContentApp.Project.prototype = {
 	},
 	getMyData: function(){
 		if(this.title != "") { 
-			var data = {title: this.title, icon: this.icon, subtitle: this.subtitle, descr: this.descr, timestamp: this.timestamp, photos: this.$photos.getMyData()};
+			var data = {title: this.title, icon: this.icon, color: this.color, subtitle: this.subtitle, descr: this.descr, timestamp: this.timestamp, photos: this.$photos.getMyData()};
 			return data;
 		}
 	},

@@ -24,12 +24,13 @@
 .logo {
 	height: 40px;
 	padding: 20px;
+
 	text-align: right;
 	@include breakpoint(mobile) {
 		text-align: left;
+		float: left;
 	}
 }
-
 .countdown {
 	height: 40px;
 	float: left;
@@ -110,6 +111,15 @@
 					color: white;
 					// font-size: 4em;
 				}
+			}
+
+
+			&.blue .icon-inner{
+				background: #3276b1;
+			}
+
+			&.red .icon-inner{
+				background: #cc0000;
 			}
 
 			@include breakpoint(mobile) {

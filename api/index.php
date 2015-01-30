@@ -28,7 +28,7 @@ if($LOGGED_IN) {
 
 //Main site variables to change
 
-$SITE_NAME = "Mitchell Holladay";
+$SITE_NAME = "UPD8R";
 
 // date_default_timezone_set('UTC');
 // $masterJSON = [];
