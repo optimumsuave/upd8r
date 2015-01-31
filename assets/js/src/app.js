@@ -53,6 +53,24 @@ $( document ).ready(function() {
     });
 
 
+    var title = $("title").html();
+    window.datalength = 0;
+    window.newlength = 0;
+
+    $(window).blur(function() {
+        window.blurred = true;
+    });
+
+    $(window).focus(function() {
+        window.blurred = false;
+        $("title").html(title);
+        if(window.newlength != 0) {
+            window.datalength = window.newlength;
+        }
+    });
+
+
+
     function renderContent(messages){
     	$(".messages").empty();
     	for(var i=0;i<messages.length;i++){
@@ -65,6 +83,21 @@ $( document ).ready(function() {
         currentTime = moment().unix();
     	if(data.length) {
     		var messages = [];
+            window.newlength = data.length;
+            // console.log(window.datalength, data.length);
+            if(window.datalength == 0) {
+                window.datalength = data.length;
+            }
+
+            if(window.datalength < data.length && window.blurred == true) {
+                $("title").html("("+(data.length-window.datalength)+") "+title);
+            }
+
+            if(window.datalength > data.length) {
+                window.datalength = data.length;
+                $("title").html(title);
+            }
+
     		for(var i=0;i<data.length;i++){
     			var msg = $("<div class='message'></div>");
                 var col = "";
@@ -97,7 +130,15 @@ $( document ).ready(function() {
         });
     }
 
-    setInterval(refreshContent, 30000);
+    function unfocus(){
+
+    }
+
+    function updateTitle(){
+
+    }
+
+    setInterval(refreshContent, 3000);
     refreshContent();
 
 
