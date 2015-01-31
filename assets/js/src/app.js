@@ -138,7 +138,7 @@ $( document ).ready(function() {
 
     }
 
-    setInterval(refreshContent, 3000);
+    setInterval(refreshContent, 30000);
     refreshContent();
 
 
