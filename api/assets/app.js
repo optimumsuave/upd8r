@@ -185,7 +185,7 @@ ContentApp.Project = function(options){
 ContentApp.Project.prototype = {
 	init: function(){
 		var _this = this;
-		this.$el = $("<div class='project'></div>").appendTo(this.$section.find(".projects"));
+		this.$el = $("<div class='project'></div>").prependTo(this.$section.find(".projects"));
 		this.$controls = $("<div class='controls'><ul><li class='moveup'><i class='fa fa-chevron-up'></i></li><li class='movedown'><i class='fa fa-chevron-down'></i></li><li class='remove'><i class='fa fa-remove'></i></li></ul></div>").appendTo(this.$el);
 		this.$moveup = this.$controls.find(".moveup");
 		this.$movedown = this.$controls.find(".movedown");
@@ -341,7 +341,7 @@ ContentApp.Section.prototype = {
 		$("body").animate({scrollTop: proj.$el.offset().top-100}, 500, function(){
 			 proj.$el.fadeOut(500).fadeIn(500);
 		});
-		this.projects.push(proj);
+		this.projects.unshift(proj);
 		this.updateCount();
 		console.log(this.projects, this.name);
 
